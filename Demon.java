@@ -21,7 +21,7 @@ public class Demon extends Creature
      //To override damage function later
     public int damage()
     {
-        super();
+        return super.damage();
     }
 
 }

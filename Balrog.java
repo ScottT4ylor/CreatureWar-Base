@@ -22,7 +22,7 @@ public class Balrog extends Demon
      //To override damage function later
     public int damage()
     {
-        super();
+        return super.damage();
     }
 
 }
