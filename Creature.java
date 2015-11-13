@@ -22,6 +22,11 @@ public class Creature
    public int damage()
    {
        rng = new Random();
-       return rng.nextInt(strength);
+       int dam = rng.nextInt(strength);
+       if (dam < 5)
+       {
+           dam = 5;
+       }
+        return dam;
    } 
 }

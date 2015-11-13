@@ -17,5 +17,11 @@ public class Elf extends Creature
         this.strength = strength;
         this.hp = hp;
     }
+    
+    //To override damage function later
+    public int damage()
+    {
+        super();
+    }
 
 }

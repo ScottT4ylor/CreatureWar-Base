@@ -16,6 +16,15 @@ public class Human extends Creature
         super(strength,hp);
         this.strength = strength;
         this.hp = hp;
+        if (this.strength > 18)
+        {
+            this.strength = 18;
+        }
+        if (this.hp > 30)
+        {
+            this.hp = 30;
+        }
+        
     }
 
 }
