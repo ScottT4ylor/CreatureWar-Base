@@ -1,22 +1,27 @@
-
+import java.util.Random;
 /**
- * Write a description of class Creature here.
+ * This class is the superclass for various races
+ * that will fight against each other until
+ * one army is defeated.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Scott Taylor
+ * @version 11/13/2015
  */
 public class Creature
 {
    private int hp;
    private int strength;
+   Random rng;
    
-   public Creature(){
-       
+   public Creature(int hp, int strength)
+   {
+       this.hp = hp;
+       this.strength = strength;
    }
     
-   public int damage(){
-       //TODO: change this
-       return 0;
-    }
-    
+   public int damage()
+   {
+       rng = new Random();
+       return rng.nextInt(strength);
+   } 
 }
