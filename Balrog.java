@@ -9,8 +9,9 @@ import java.util.Random;
  */
 public class Balrog extends Demon
 {
-    int strength;
-    int hp;
+    private int strength;
+    private int hp;
+    private Random rng;
 
     public Balrog(int strength, int hp)
     {
@@ -22,7 +23,10 @@ public class Balrog extends Demon
      //To override damage function later
     public int damage()
     {
-        return super.damage();
+        int dam = 0;
+        dam += super.damage();
+        dam += super.damage();
+        return dam;
     }
 
 }

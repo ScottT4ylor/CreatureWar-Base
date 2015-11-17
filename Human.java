@@ -1,4 +1,4 @@
-import java.util.Random;
+
 /**
  * Humans are a basic class in a war game between different races.
  * They have reletively low strength and hp.
@@ -8,8 +8,8 @@ import java.util.Random;
  */
 public class Human extends Creature
 {
-    int strength;
-    int hp;
+    private int strength;
+    private int hp;
 
     public Human(int strength, int hp)
     {

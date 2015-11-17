@@ -8,8 +8,9 @@ import java.util.Random;
  */
 public class Demon extends Creature
 {
-    int strength;
-    int hp;
+    private int strength;
+    private int hp;
+    private Random rng;
 
     public Demon(int strength, int hp)
     {
@@ -21,7 +22,13 @@ public class Demon extends Creature
      //To override damage function later
     public int damage()
     {
-        return super.damage();
+        int dam = super.damage();
+        rng = new Random();
+        if (rng.nextFloat() >= 0.95)
+        {
+            dam += 50;
+        }
+        return dam;
     }
 
 }

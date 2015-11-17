@@ -1,4 +1,4 @@
-import java.util.Random;
+
 /**
  * Cyberdemons are a special class of Demons in a war game between
  * different races. They have nothing special compared to demons.
@@ -8,8 +8,8 @@ import java.util.Random;
  */
 public class CyberDemon extends Demon
 {
-    int strength;
-    int hp;
+    private int strength;
+    private int hp;
 
     public CyberDemon(int strength, int hp)
     {

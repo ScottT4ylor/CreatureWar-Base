@@ -8,8 +8,9 @@ import java.util.Random;
  */
 public class Elf extends Creature
 {
-    int strength;
-    int hp;
+    private int strength;
+    private int hp;
+    private Random rng;
 
     public Elf(int strength, int hp)
     {
@@ -18,10 +19,19 @@ public class Elf extends Creature
         this.hp = hp;
     }
     
-    //To override damage function later
+    /**
+     * overrides superclass damage function
+     * calls superclass damage function, gets the damage to deal
+     * and then rolls to find if it doubles it.
+     */
     public int damage()
     {
-        return super.damage();
+        int dam = super.damage();
+        rng = new Random();
+        if (rng.nextFloat() >= 0.9)
+        {
+            dam *= 2;
+        }
+        return dam;
     }
-
 }

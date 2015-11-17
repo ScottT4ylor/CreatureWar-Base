@@ -9,8 +9,9 @@ import java.util.Random;
  */
 public class Champion extends Human
 {
-    int strength;
-    int hp;
+    private int strength;
+    private int hp;
+    private Random rng;
 
     public Champion(int strength, int hp)
     {

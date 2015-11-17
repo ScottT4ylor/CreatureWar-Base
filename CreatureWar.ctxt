@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=
+comment0.target=CreatureWar()
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ CreatureWar\r\n
+comment1.params=ar1\ ar2
+comment1.target=void\ runWar(java.lang.String,\ java.lang.String)
+comment1.text=\r\n\ Runs\ the\ war\ between\ two\ armies\r\n
+comment2.params=ar1\ ar2
+comment2.target=void\ generateArmies(java.lang.String,\ java.lang.String)
+numComments=3

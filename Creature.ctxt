@@ -1,6 +1,11 @@
 #BlueJ class context
-comment0.params=hp\ strength
-comment0.target=Creature(int,\ int)
-comment1.params=
-comment1.target=int\ damage()
-numComments=2
+comment0.params=
+comment0.target=Creature()
+comment0.text=\r\n\ no\ arg\ constructor\r\n\ Though\ it\ won't\ actually\ be\ called\ by\ the\ CreatureWar\r\n
+comment1.params=hp\ strength
+comment1.target=Creature(int,\ int)
+comment1.text=\r\n\ constructor\ for\ the\ CreatureWar\r\n\ \r\n\ @param\ hp\ the\ hp\ of\ the\ creature\r\n\ @param\ strength\ the\ strength\ of\ the\ creature\r\n
+comment2.params=
+comment2.target=int\ damage()
+comment2.text=\r\n\ method\ to\ find\ damage\ dealt\ by\ an\ attack\r\n\ \r\n\ @return\ int\ the\ damage\ to\ deal\r\n
+numComments=3

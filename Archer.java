@@ -8,9 +8,10 @@ import java.util.Random;
  */
 public class Archer extends Elf
 {
-    int strength;
-    int hp;
-
+    private int strength;
+    private int hp;
+    private Random rng;
+    
     public Archer(int strength, int hp)
     {
         super(strength,hp);

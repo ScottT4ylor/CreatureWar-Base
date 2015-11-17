@@ -5,28 +5,53 @@ import java.util.Random;
  * one army is defeated.
  * 
  * @author Scott Taylor
- * @version 11/13/2015
+ * @version 11/16/2015
  */
 public class Creature
 {
+   //fields
+   
    private int hp;
    private int strength;
-   Random rng;
+   private Random rng;
    
+   
+   //constructors
+   
+   /**
+    * no arg constructor
+    * Though it won't actually be called by the CreatureWar
+    */
+   public Creature()
+   {
+       hp = 10;
+       strength = 10;
+   }
+   
+   /**
+    * constructor for the CreatureWar
+    * 
+    * @param hp the hp of the creature
+    * @param strength the strength of the creature
+    */
    public Creature(int hp, int strength)
    {
        this.hp = hp;
        this.strength = strength;
    }
-    
+   
+   //fields
+   
+   /**
+    * method to find damage dealt by an attack
+    * 
+    * @return int the damage to deal
+    */
    public int damage()
    {
        rng = new Random();
-       int dam = rng.nextInt(strength);
-       if (dam < 5)
-       {
-           dam = 5;
-       }
-        return dam;
+       int dam = rng.nextInt(strength-1)+1;
+       return dam;
    } 
+   
 }
