@@ -13,6 +13,24 @@ public class Balrog extends Demon
     private int hp;
     private Random rng;
 
+    /**
+     * Constructor for Balrog class
+     * Generates random stats up to a cap
+     */
+    public Balrog()
+    {
+        super();
+        rng = new Random();
+        strength = rng.nextInt(24)+5;
+        hp = rng.nextInt(65)+5;
+    }
+        
+    /**
+     * Constructor with params passed in
+     * 
+     * @param strength how strong it is
+     * @param hp how much life it has
+     */
     public Balrog(int strength, int hp)
     {
         super(strength,hp);

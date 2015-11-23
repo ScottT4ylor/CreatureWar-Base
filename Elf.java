@@ -12,6 +12,26 @@ public class Elf extends Creature
     private int hp;
     private Random rng;
 
+    
+    /**
+     * Constructor for elf class
+     * Generates random stats up to a cap
+     */
+    public Elf()
+    {
+        super();
+        rng = new Random();
+        strength = rng.nextInt(20)+5;
+        hp = rng.nextInt(45)+5;
+    }
+        
+    /**
+     * Constructor with params passed in
+     * 
+     * @param strength how strong it is
+     * @param hp how much life it has
+     */
+    
     public Elf(int strength, int hp)
     {
         super(strength,hp);

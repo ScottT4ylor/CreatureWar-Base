@@ -1,7 +1,11 @@
 #BlueJ class context
-comment0.params=strength\ hp
-comment0.target=Elf(int,\ int)
-comment1.params=
-comment1.target=int\ damage()
-comment1.text=\r\n\ overrides\ superclass\ damage\ function\r\n\ calls\ superclass\ damage\ function,\ gets\ the\ damage\ to\ deal\r\n\ and\ then\ rolls\ to\ find\ if\ it\ doubles\ it.\r\n
-numComments=2
+comment0.params=
+comment0.target=Elf()
+comment0.text=\r\n\ Constructor\ for\ elf\ class\r\n\ Generates\ random\ stats\ up\ to\ a\ cap\r\n
+comment1.params=strength\ hp
+comment1.target=Elf(int,\ int)
+comment1.text=\r\n\ Constructor\ with\ params\ passed\ in\r\n\ \r\n\ @param\ strength\ how\ strong\ it\ is\r\n\ @param\ hp\ how\ much\ life\ it\ has\r\n
+comment2.params=
+comment2.target=int\ damage()
+comment2.text=\r\n\ overrides\ superclass\ damage\ function\r\n\ calls\ superclass\ damage\ function,\ gets\ the\ damage\ to\ deal\r\n\ and\ then\ rolls\ to\ find\ if\ it\ doubles\ it.\r\n
+numComments=3

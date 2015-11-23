@@ -11,18 +11,49 @@ public class Archer extends Elf
     private int strength;
     private int hp;
     private Random rng;
+    private int rangedCD;
     
+    /**
+     * Constructor for Archer class
+     * Generates random stats up to a cap
+     */
+    public Archer()
+    {
+        super();
+        rangedCD = 0;
+        rng = new Random();
+        strength = rng.nextInt(15)+5;
+        hp = rng.nextInt(20)+5;
+    }
+        
+    /**
+     * Constructor with params passed in
+     * 
+     * @param strength how strong it is
+     * @param hp how much life it has
+     */
     public Archer(int strength, int hp)
     {
         super(strength,hp);
+        rangedCD = 0;
         this.strength = strength;
         this.hp = hp;
     }
     
-     //To override damage function later
-    public int damage()
+    public int rangedAttack()
     {
-        return super.damage();
+        int dam;
+        if(rangedCD == 0)
+        {
+            rng = new Random();
+            dam = super.damage()/2;
+            rangedCD = rng.nextInt(3);
+        }
+        else
+        {
+            dam = 0;
+            rangedCD -= 1;
+        }
+        return dam;
     }
-
 }
