@@ -14,6 +14,9 @@ public class CreatureWar
     private Creature fighter1;
     private Creature fighter2;
     private Random rng;
+    private int army1DeathTally;
+    private int army2DeathTally;
+   
     
     
     /**
@@ -258,11 +261,15 @@ public class CreatureWar
                     int spDamage = cast.rangedAttack();
                     int target = rng.nextInt(army2.size()-1)+1;
                     army2.get(target).reduceHP(spDamage);
-                    if(army2.get(target).isAlive() == false)
-                    {
-                        archerKills1 += 1;
-                    }
+                    
                 }
+            }
+        }
+        for(Creature check : army2)
+        {
+            if(check.isAlive() == false)
+            {
+                archerKills1++;
             }
         }
         for(Creature backup : army2)
@@ -284,6 +291,14 @@ public class CreatureWar
                 }
             }
         }
+        for(Creature check : army1)
+        {
+            if(check.isAlive() == false)
+            {
+                archerKills2++;
+            }
+        }
+        
         if (archers1 > 0 && archers2 == 0)
         {
             System.out.println("The first army's archers fire a volley of arrows, killing "+archerKills1+" enemies.");
