@@ -36,10 +36,11 @@ public class Creature
     * @param hp the hp of the creature
     * @param strength the strength of the creature
     */
-   public Creature(int hp, int strength)
+   public Creature(int hpMax, int strengthMax)
    {
-       this.hp = hp;
-       this.strength = strength;
+       rng = new Random();
+       hp = rng.nextInt(hpMax-5)+5;
+       strength = rng.nextInt(strengthMax-5)+5;
    }
    
    //methods

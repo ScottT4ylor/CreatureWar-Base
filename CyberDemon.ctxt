@@ -2,7 +2,4 @@
 comment0.params=
 comment0.target=CyberDemon()
 comment0.text=\r\n\ Constructor\ for\ CyberDemon\ class\r\n\ Generates\ random\ stats\ up\ to\ a\ cap\r\n
-comment1.params=strength\ hp
-comment1.target=CyberDemon(int,\ int)
-comment1.text=\r\n\ Constructor\ with\ params\ passed\ in\r\n\ \r\n\ @param\ strength\ how\ strong\ it\ is\r\n\ @param\ hp\ how\ much\ life\ it\ has\r\n
-numComments=2
+numComments=1

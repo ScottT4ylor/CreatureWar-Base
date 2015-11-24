@@ -250,15 +250,18 @@ public class CreatureWar
         {
             if (backup instanceof Archer)
             {
-                archers1 += 1;
-                rng = new Random();
-                Archer cast = (Archer)backup;
-                int spDamage = cast.rangedAttack();
-                int target = rng.nextInt(army2.size()-1)+1;
-                army2.get(target).reduceHP(spDamage);
-                if(army2.get(target).isAlive() == false)
+                if (army2.size() > 1)
                 {
-                    archerKills1 += 1;
+                    archers1 += 1;
+                    rng = new Random();
+                    Archer cast = (Archer)backup;
+                    int spDamage = cast.rangedAttack();
+                    int target = rng.nextInt(army2.size()-1)+1;
+                    army2.get(target).reduceHP(spDamage);
+                    if(army2.get(target).isAlive() == false)
+                    {
+                        archerKills1 += 1;
+                    }
                 }
             }
         }
@@ -266,15 +269,18 @@ public class CreatureWar
         {
             if (backup instanceof Archer)
             {
-                archers2 += 1;
-                rng = new Random();
-                Archer cast = (Archer) backup;
-                int spDamage = cast.rangedAttack();
-                int target = rng.nextInt(army1.size()-1)+1;
-                army1.get(target).reduceHP(spDamage);
-                if(army1.get(target).isAlive() == false)
+                if (army1.size() > 1)
                 {
-                    archerKills2 += 1;
+                    archers2 += 1;
+                    rng = new Random();
+                    Archer cast = (Archer) backup;
+                    int spDamage = cast.rangedAttack();
+                    int target = rng.nextInt(army1.size()-1)+1;
+                    army1.get(target).reduceHP(spDamage);
+                    if(army1.get(target).isAlive() == false)
+                    {
+                        archerKills2 += 1;
+                    }
                 }
             }
         }

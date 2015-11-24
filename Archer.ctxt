@@ -2,9 +2,6 @@
 comment0.params=
 comment0.target=Archer()
 comment0.text=\r\n\ Constructor\ for\ Archer\ class\r\n\ Generates\ random\ stats\ up\ to\ a\ cap\r\n
-comment1.params=strength\ hp
-comment1.target=Archer(int,\ int)
-comment1.text=\r\n\ Constructor\ with\ params\ passed\ in\r\n\ \r\n\ @param\ strength\ how\ strong\ it\ is\r\n\ @param\ hp\ how\ much\ life\ it\ has\r\n
-comment2.params=
-comment2.target=int\ rangedAttack()
-numComments=3
+comment1.params=
+comment1.target=int\ rangedAttack()
+numComments=2

@@ -9,9 +9,9 @@ import java.util.Random;
  */
 public class Human extends Creature
 {
-    private int strength;
-    private int hp;
     private Random rng;
+    private static final int strMax = 18;
+    private static final int hpMax = 30;
 
     /**
      * Constructor for human class
@@ -19,32 +19,11 @@ public class Human extends Creature
      */
     public Human()
     {
-        super();
-        rng = new Random();
-        strength = rng.nextInt(13)+5;
-        hp = rng.nextInt(25)+5;
+        super(strMax,hpMax);
     }
-        
-    /**
-     * Constructor with params passed in
-     * 
-     * @param strength how strong it is
-     * @param hp how much life it has
-     */
-    public Human(int strength, int hp)
+    
+    public Human(int maxStr, int maxHp)
     {
-        super(strength,hp);
-        this.strength = strength;
-        this.hp = hp;
-        if (this.strength > 18)
-        {
-            this.strength = 18;
-        }
-        if (this.hp > 30)
-        {
-            this.hp = 30;
-        }
-        
+        super(maxStr, maxHp);
     }
-
 }

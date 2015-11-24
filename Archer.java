@@ -8,10 +8,10 @@ import java.util.Random;
  */
 public class Archer extends Elf
 {
-    private int strength;
-    private int hp;
     private Random rng;
     private int rangedCD;
+    private static final int strMax = 20;
+    private static final int hpMax = 25;
     
     /**
      * Constructor for Archer class
@@ -19,25 +19,8 @@ public class Archer extends Elf
      */
     public Archer()
     {
-        super();
+        super(strMax,hpMax);
         rangedCD = 0;
-        rng = new Random();
-        strength = rng.nextInt(15)+5;
-        hp = rng.nextInt(20)+5;
-    }
-        
-    /**
-     * Constructor with params passed in
-     * 
-     * @param strength how strong it is
-     * @param hp how much life it has
-     */
-    public Archer(int strength, int hp)
-    {
-        super(strength,hp);
-        rangedCD = 0;
-        this.strength = strength;
-        this.hp = hp;
     }
     
     public int rangedAttack()

@@ -8,9 +8,9 @@ import java.util.Random;
  */
 public class CyberDemon extends Demon
 {
-    private int strength;
-    private int hp;
     Random rng;
+    private static final int strMax = 45;
+    private static final int hpMax = 40;
 
     /**
      * Constructor for CyberDemon class
@@ -18,24 +18,6 @@ public class CyberDemon extends Demon
      */
     public CyberDemon()
     {
-        super();
-        rng = new Random();
-        strength = rng.nextInt(40)+5;
-        hp = rng.nextInt(35)+5;
+        super(strMax,hpMax);
     }
-        
-    /**
-     * Constructor with params passed in
-     * 
-     * @param strength how strong it is
-     * @param hp how much life it has
-     */
-    
-    public CyberDemon(int strength, int hp)
-    {
-        super(strength,hp);
-        this.strength = strength;
-        this.hp = hp;
-    }
-
 }

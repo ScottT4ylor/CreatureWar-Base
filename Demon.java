@@ -8,9 +8,9 @@ import java.util.Random;
  */
 public class Demon extends Creature
 {
-    private int strength;
-    private int hp;
     private Random rng;
+    private static final int strMax = 45;
+    private static final int hpMax = 40;
 
     /**
      * Constructor for demon class
@@ -18,27 +18,18 @@ public class Demon extends Creature
      */
     public Demon()
     {
-        super();
-        rng = new Random();
-        strength = rng.nextInt(40)+5;
-        hp = rng.nextInt(35)+5;
+        super(strMax,hpMax);
     }
-        
+    
     /**
-     * Constructor with params passed in
-     * 
-     * @param strength how strong it is
-     * @param hp how much life it has
+     * Constructor for demon class
+     * Generates random stats up to a cap
      */
-    
-    public Demon(int strength, int hp)
+    public Demon(int maxStr, int maxHp)
     {
-        super(strength,hp);
-        this.strength = strength;
-        this.hp = hp;
+        super(maxStr,maxHp);
     }
     
-     //To override damage function later
     public int damage()
     {
         int dam = super.damage();

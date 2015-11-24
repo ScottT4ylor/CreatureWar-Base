@@ -2,7 +2,7 @@
 comment0.params=
 comment0.target=Creature()
 comment0.text=\r\n\ no\ arg\ constructor\r\n\ Generates\ random\ stats\ for\ the\ creature\r\n
-comment1.params=hp\ strength
+comment1.params=hpMax\ strengthMax
 comment1.target=Creature(int,\ int)
 comment1.text=\r\n\ constructor\ for\ the\ CreatureWar\r\n\ \r\n\ For\ if\ it\ would\ be\ called\ with\ stats\ passed\ into\ it.\r\n\ \r\n\ @param\ hp\ the\ hp\ of\ the\ creature\r\n\ @param\ strength\ the\ strength\ of\ the\ creature\r\n
 comment2.params=

@@ -9,9 +9,9 @@ import java.util.Random;
  */
 public class Champion extends Human
 {
-    private int strength;
-    private int hp;
     private Random rng;
+    private static final int strMax = 25;
+    private static final int hpMax = 65;
     
     /**
      * Constructor for champion class
@@ -19,40 +19,17 @@ public class Champion extends Human
      */
     public Champion()
     {
-        super();
-        rng = new Random();
-        strength = rng.nextInt(20)+5;
-        hp = rng.nextInt(60)+5;
-    }
-        
-    /**
-     * Constructor with params passed in
-     * 
-     * @param strength how strong it is
-     * @param hp how much life it has
-     */
-
-    public Champion(int strength, int hp)
-    {
-        super(strength,hp);
-        this.strength = strength;
-        this.hp = hp;
+        super(strMax,hpMax);
     }
     
     public int reduceHP(int damage)
     {
        int newDamage = block(damage);
        //System.out.print("HP before:"+hp+" Taking: "+newDamage+" damage.\n");
-       hp -= newDamage;
        //System.out.println("HP after: "+hp);
-       return hp;
+       return super.reduceHP(newDamage);
     }
-    
-    public int getHP()
-    {
-        return hp;
-    }
-    
+
     public int block(int damage)
     {
         //System.out.print("Current HP: "+hp+" damage before block: "+damage);

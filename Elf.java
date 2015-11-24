@@ -8,9 +8,9 @@ import java.util.Random;
  */
 public class Elf extends Creature
 {
-    private int strength;
-    private int hp;
     private Random rng;
+    private static final int strMax = 25;
+    private static final int hpMax = 50;
 
     
     /**
@@ -19,24 +19,16 @@ public class Elf extends Creature
      */
     public Elf()
     {
-        super();
-        rng = new Random();
-        strength = rng.nextInt(20)+5;
-        hp = rng.nextInt(45)+5;
+        super(strMax,hpMax);
     }
-        
-    /**
-     * Constructor with params passed in
-     * 
-     * @param strength how strong it is
-     * @param hp how much life it has
-     */
     
-    public Elf(int strength, int hp)
+    /**
+     * Constructor for elf class
+     * Generates random stats up to a cap
+     */
+    public Elf(int maxStr, int maxHp)
     {
-        super(strength,hp);
-        this.strength = strength;
-        this.hp = hp;
+        super(maxStr,maxHp);
     }
     
     /**
