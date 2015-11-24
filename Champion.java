@@ -42,9 +42,9 @@ public class Champion extends Human
     public int reduceHP(int damage)
     {
        int newDamage = block(damage);
-       System.out.print("HP before:"+hp+" Taking: "+newDamage+" damage.\n");
+       //System.out.print("HP before:"+hp+" Taking: "+newDamage+" damage.\n");
        hp -= newDamage;
-       System.out.println("HP after: "+hp);
+       //System.out.println("HP after: "+hp);
        return hp;
     }
     
@@ -55,16 +55,16 @@ public class Champion extends Human
     
     public int block(int damage)
     {
-        System.out.print("Current HP: "+hp+" damage before block: "+damage);
+        //System.out.print("Current HP: "+hp+" damage before block: "+damage);
         rng = new Random();
         if(rng.nextFloat() >= 0.95)
         {
-            System.out.print("Got special block. ");
+            //System.out.print("Got special block. ");
             damage /= 2;
-            System.out.print("damage now at "+damage);
+            //System.out.print("damage now at "+damage);
         }
         damage -= 4;
-        System.out.print("Soaked 4, damage now at "+damage+"\n");
+        //System.out.print("Soaked 4, damage now at "+damage+"\n");
         if (damage < 0)
         {
             damage = 0;

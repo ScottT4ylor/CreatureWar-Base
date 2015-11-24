@@ -51,7 +51,7 @@ public class Creature
     */
    public int damage()
    {
-       System.out.println("Current creature has hp/str of: " +hp+"/"+strength);
+       //System.out.println("Current creature has hp/str of: " +hp+"/"+strength);
        rng = new Random();
        int dam = rng.nextInt(strength-1)+1;
        return dam;
