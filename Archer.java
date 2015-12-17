@@ -29,7 +29,7 @@ public class Archer extends Elf
         if(rangedCD == 0)
         {
             rng = new Random();
-            dam = super.damage()/2;
+            dam = super.damage()/3;
             rangedCD = rng.nextInt(3);
         }
         else

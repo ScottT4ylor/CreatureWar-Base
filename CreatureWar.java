@@ -14,8 +14,6 @@ public class CreatureWar
     private Creature fighter1;
     private Creature fighter2;
     private Random rng;
-    private int army1DeathTally;
-    private int army2DeathTally;
    
     
     
@@ -105,7 +103,7 @@ public class CreatureWar
         {
             case "human":
                 army1Type = "humans";
-                soldiers = rng.nextInt(500)+500;
+                soldiers = rng.nextInt(1000)+1500;
                 for(int i = 0 ; i < soldiers; i++)
                 {
                     if (rng.nextFloat() >= 0.01)
@@ -136,9 +134,9 @@ public class CreatureWar
             case "demon":
                 army1Type = "demons";
                 soldiers = rng.nextInt(150)+100;
-                classChance = rng.nextFloat();
                 for(int i = 0 ; i < soldiers; i++)
                 {
+                	classChance = rng.nextFloat();
                     if (classChance >= 0.5)
                     {
                         army1.add(new Demon());
@@ -163,7 +161,7 @@ public class CreatureWar
         {
             case "human":
                 army2Type = "humans";
-                soldiers = rng.nextInt(500)+500;
+                soldiers = rng.nextInt(1000)+1500;
                 for(int i = 0 ; i < soldiers; i++)
                 {
                     if (rng.nextFloat() >= 0.10)
@@ -194,9 +192,9 @@ public class CreatureWar
             case "demon":
                 army2Type = "demons";
                 soldiers = rng.nextInt(150)+100;
-                classChance = rng.nextFloat();
                 for(int i = 0 ; i < soldiers; i++)
                 {
+                	classChance = rng.nextFloat();
                     if (classChance >= 0.5)
                     {
                         army2.add(new Demon());
@@ -244,7 +242,7 @@ public class CreatureWar
         System.out.println("Fighter 1 has "+fighter1.getHP()+" hp left.");
         System.out.println("Fighter 2 has "+fighter2.getHP()+" hp left.\n");
         
-        
+        int hpBefore = 0;
         int archers1 = 0;
         int archers2 = 0;
         int archerKills1 = 0;
@@ -260,16 +258,19 @@ public class CreatureWar
                     Archer cast = (Archer)backup;
                     int spDamage = cast.rangedAttack();
                     int target = rng.nextInt(army2.size()-1)+1;
-                    army2.get(target).reduceHP(spDamage);
-                    
+                    hpBefore = army2.get(target).getHP();
+                    if (rng.nextFloat() > 0.5)//did it hit?
+                    {
+                    	army2.get(target).reduceHP(spDamage);
+                    	if (hpBefore > 0)
+                    	{
+                    		if (army2.get(target).getHP() <= 0)
+                    		{
+                    			archerKills1++;
+                    		}
+                    	}
+                    }
                 }
-            }
-        }
-        for(Creature check : army2)
-        {
-            if(check.isAlive() == false)
-            {
-                archerKills1++;
             }
         }
         for(Creature backup : army2)
@@ -283,31 +284,27 @@ public class CreatureWar
                     Archer cast = (Archer) backup;
                     int spDamage = cast.rangedAttack();
                     int target = rng.nextInt(army1.size()-1)+1;
-                    army1.get(target).reduceHP(spDamage);
-                    if(army1.get(target).isAlive() == false)
+                    hpBefore = army1.get(target).getHP();
+                    if (rng.nextFloat() > 0.5)
                     {
-                        archerKills2 += 1;
+                    	army1.get(target).reduceHP(spDamage);
+                    	if (hpBefore > 0)
+                    	{
+                    		if(army1.get(target).getHP() <= 0)
+                    		{
+                    			archerKills2++;
+                    		}
+                    	}
                     }
                 }
             }
         }
-        for(Creature check : army1)
-        {
-            if(check.isAlive() == false)
-            {
-                archerKills2++;
-            }
-        }
         
-        if (archers1 > 0 && archers2 == 0)
+        if (archers1 > 0)
         {
             System.out.println("The first army's archers fire a volley of arrows, killing "+archerKills1+" enemies.");
         }
-        else if (archers1 > 0 && archers2 > 0)
-        {
-            System.out.println("The both army's archers fire a volley of arrows, killing "+(archerKills1+archerKills2)+" troops.");
-        }
-        else if (archers1 == 0 && archers2 > 0)
+        if (archers2 > 0)
         {
             System.out.println("The second army's archers fire a volley of arrows, killing "+archerKills2+" enemies.");
         }
